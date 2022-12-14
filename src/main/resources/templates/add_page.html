@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Page</title>
+</head>
+<body>
+
+
+This is the where we can add new vehicles to the array list and
+
+<form action="#" th:action="@{/addCar}" method="post"
+      th:object="${car}">
+  <p>Model: <input type="text" th:field="*{model}"></p>
+  <p>Year : <input type="text" th:field="*{year}"></p>
+  <p>Brand : <input type="text" th:field="*{brand}"></p>
+
+  <p><input type="submit" value="Add"></p>
+
+</form>
+<br>
+<p><a href="/">Back to index</a> </p>
+
+</body>
+</html>

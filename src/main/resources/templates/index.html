@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+<!--Header-->
+<h1>Welcome to the Cars Database</h1>
+
+<div th:if="${carList.empty}">
+    <h2>Add a car to begin!</h2>
+</div>
+
+<!--If the database is not empty this will run-->
+<div th:unless="${carList.empty}">
+    <table>
+        <tr>
+            <th>Model</th><th>Year</th><th>Brand</th>
+        </tr>
+        <tr th:each="car : ${carList}">
+            <td th:text="${car.model}">Model S</td>
+            <td th:text="${car.year}">2023</td>
+            <td th:text="${car.brand}">Tesla</td>
+        </tr>
+    </table>
+</div>
+
+<p><a href="/add_page">Add a new Vehicle</a></p>
+
+
+</body>
+</html>
